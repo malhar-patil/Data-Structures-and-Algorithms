@@ -1,23 +1,44 @@
+// #include<bits/stdc++.h>
+// using namespace std;
+// int check(int arr[],int n){
+//     for(int i=0;i<n;i++){
+//     	    int num=arr[i];
+//     	    int x=num%10;
+//     	    while(num>0){
+//     	        int lastdigit=num%10;
+//                 cout<<x<<endl;
+//                 cout<<lastdigit<<endl;
+//     	        if(lastdigit!=x){
+//     	            return 0;
+//     	        }
+//     	        num=num/10;
+//     	    }
+//     	}
+//     	return 1;
+// }
+// int main(){
+// int arr[5]={111,222,333,444,555};
+// cout<<check(arr,5)<<endl;
+// cout<<endl;
+// return 0;
+// }
+
 #include<bits/stdc++.h>
 using namespace std;
-void bubbleSort(int arr[],int n){
-    int counter=0;
-    while(counter<n){
-        for(int i=0;i<n-counter;i++){
-            if(arr[i]>arr[i+1]){
-                swap(arr[i],arr[i+1]);
-            }
-        }
-        counter++;
-    }
-    return;
-}
 int main(){
-int arr[5]={2,10,4,7,1};
-bubbleSort(arr,5);
-for(int i=0;i<5;i++){
-    cout<<arr[i]<<" ";
+int arr[6]={2,-1,5,3,-8,6};
+int currsum=0;
+int maxsum=0;
+for(int i=0;i<6;i++){
+    currsum+=arr[i];
+    if(currsum>maxsum){
+        maxsum=currsum;
+    }
+    if(currsum<0){
+        currsum=0;
+    }
 }
+cout<<maxsum<<endl;
 cout<<endl;
 return 0;
 }
