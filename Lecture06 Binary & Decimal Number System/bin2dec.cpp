@@ -3,15 +3,15 @@ using namespace std;
 int main(){
 int n;
 cin>>n;
-long ans=0;
+int dec=0;
 int i=0;
-while(n>0){
-    int lastbit=n%10;
-    ans=(lastbit*pow(2,i))+ans;
+while(n!=0){
+    int lastdigit=n%10;
+    dec=dec+lastdigit*abs(pow(2,i));
     i++;
     n=n/10;
 }
-cout<<ans<<endl;
+cout<<dec<<endl;
 cout<<endl;
 return 0;
 }

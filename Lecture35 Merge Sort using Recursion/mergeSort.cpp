@@ -1,80 +1,74 @@
 #include<bits/stdc++.h>
 using namespace std;
-void merge (int arr[],int s,int e){
-
+void merge(int arr[],int s,int e){
     int mid=s+(e-s)/2;
 
     int len1=mid-s+1;
     int len2=e-mid;
 
-    int a1[len1]={0};
-    int a2[len2]={0};
+    vector<int> arr1;
+    vector<int> arr2;
 
-    int k=s;
+    int temp=s;
+    while(temp<=mid){
+        arr1.push_back(arr[temp]);
+        temp++;
+    }
+    temp=mid+1;
+    while(temp<=e){
+        arr2.push_back(arr[temp]);
+        temp++;
+    }
 
-    for(int i=0;i<len1;i++){
-        a1[i]=arr[k];
-        k++;
-    }
-    k=mid+1;
-    for(int i=0;i<len1;i++){
-        a2[i]=arr[k];
-        k++;
-    }
-    
+    //merge
     int i=0;
     int j=0;
-    k=s;
-
+    temp=s;
     while(i<len1&&j<len2){
-        if(a1[i]<a2[j]){
-            arr[k]=a1[i];
-            k++;
+        if(arr1[i]<arr2[j]){
+            arr[s]=arr1[i];
+            s++;
             i++;
         }
-        else {
-            arr[k]=a2[j];
-            k++;
+        else{
+            arr[s]=arr2[j];
+            s++;
             j++;
         }
     }
-    while (i<len1){
-        arr[k]=a1[i];
-        k++;
+    while(i<len1){
+        arr[s]=arr1[i];
+        s++;
         i++;
     }
-
     while(j<len2){
-        arr[k]=a2[j];
-        k++;
+        arr[s]=arr2[j];
+        s++;
         j++;
     }
 
+    return;
 }
 void mergeSort(int arr[],int s,int e){
-    //
     if(s>=e){
         return;
     }
 
     int mid=s+(e-s)/2;
-    //sort left part
+
     mergeSort(arr,s,mid);
 
-    //sort right part
     mergeSort(arr,mid+1,e);
 
-    //merge sorted arrays
     merge(arr,s,e);
-
 
 }
 int main(){
-int arr[7]={38,27,43,3,9,82,10};
-int n=7;
+int arr[5]={2,3,1,6,4};
+int n=5;
 mergeSort(arr,0,n-1);
 
-for(int i=0;i<7;i++){
+for(int i=0;i<5;i++){
     cout<<arr[i]<<" ";
 }
 cout<<endl;

@@ -4,12 +4,12 @@ int main(){
 int a,b;
 cin>>a>>b;
 if(a>b){
-    cout<<"Max Number: "<<a<<endl;
-    cout<<"Min Number: "<<b<<endl;
+    cout<<"Max: "<<a<<endl;
+    cout<<"Min: "<<b<<endl;
 }
 else{
-    cout<<"Max Number: "<<b<<endl;
-    cout<<"Min Number: "<<a<<endl;
+    cout<<"Max: "<<b<<endl;
+    cout<<"Min: "<<a<<endl;
 }
 cout<<endl;
 return 0;

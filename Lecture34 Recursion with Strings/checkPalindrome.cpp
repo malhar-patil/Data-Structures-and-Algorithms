@@ -1,32 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
-char toLower(char s){
-    if(s>='a'&&s<='z'){
-        return s;
-    }
-    else{
-        return s-'A'+'a';
-    }
-}
-bool checkPalindrome(string &str,int i){
-    int n=str.length();
-
-    //base case
-    if(i>(n-i-1)){
+bool palindrome(string &s,int i,int j){
+    if(i>j){
         return true;
     }
 
-    if(tolower(str[i])!=tolower(str[n-i-1])){
+    if(s[i]!=s[j]){
         return false;
     }
+
     i++;
-    checkPalindrome(str,i);
-
-
+    j--;
+    return palindrome(s,i,j);
 }
 int main(){
-string str="CivIc";
-cout<<checkPalindrome(str,0);
+string s="abccba";
+
+cout<<palindrome(s,0,s.length()-1)<<endl;
 cout<<endl;
 return 0;
 }

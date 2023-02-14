@@ -4,13 +4,14 @@ int main(){
 int a;
 cin>>a;
 if(a>0){
-    cout<<"Postive Number"<<endl;
+    cout<<"Positive"<<endl;
 }
 else if(a==0){
     cout<<"Zero"<<endl;
 }
 else{
-    cout<<"Negative Number"<<endl;
+    cout<<"negative"<<endl;
 }
+cout<<endl;
 return 0;
 }

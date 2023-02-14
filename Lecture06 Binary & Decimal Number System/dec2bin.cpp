@@ -3,16 +3,15 @@ using namespace std;
 int main(){
 int n;
 cin>>n;
-float ans=0;
 int i=0;
-
+int bin=0;
 while(n!=0){
-    int bit=n&1;
-    ans=(bit*pow(10,i))+ans;
-    n=n>>1;
+    int lastbit=n&1;
+    bin=bin+lastbit*abs(pow(10,i));
     i++;
+    n=n>>1;
 }
-cout<<ans<<endl;;
+cout<<bin<<endl;
 cout<<endl;
 return 0;
 }

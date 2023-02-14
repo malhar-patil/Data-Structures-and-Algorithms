@@ -1,19 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
-void reachHome(int home,int curr){
+void reach(int a,int b){
+    cout<<"Curr: "<<a<<endl;
+    cout<<"Home: "<<b<<endl;
     //base case
-    cout<<"Home: "<<home<<" "<<"Curr: "<<curr<<endl;
-    if(curr==home){
-        cout<<"Reached!"<<endl;
+    if(a==b){
+        cout<<"Reached!!"<<endl;
         return;
     }
-    curr++;
-    reachHome(home,curr);
+    
+    a++;
+    reach(a,b);
+
 }
 int main(){
-int home=10;
-int curr=0;
-reachHome(home,curr);
+int a,b;
+cin>>a>>b;
+reach(a,b);
 cout<<endl;
 return 0;
 }

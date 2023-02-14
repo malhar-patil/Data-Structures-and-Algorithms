@@ -2,7 +2,6 @@
 using namespace std;
 bool isSorted(int arr[],int n){
     //base case
-    cout<<"N: "<<n<<endl;
     if(n==0||n==1){
         return true;
     }
@@ -15,7 +14,7 @@ bool isSorted(int arr[],int n){
     }
 }
 int main(){
-int arr[5]={2,4,5,10,12};
+int arr[5]={2,4,6,11,13};
 cout<<isSorted(arr,5)<<endl;
 cout<<endl;
 return 0;

@@ -9,6 +9,7 @@ while(i<=n){
     sum+=i;
     i+=2;
 }
-cout<<"Sum: "<<sum<<endl;
+cout<<sum<<endl;
+cout<<endl;
 return 0;
 }

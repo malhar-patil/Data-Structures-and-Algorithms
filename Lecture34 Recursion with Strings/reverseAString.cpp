@@ -1,23 +1,16 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-void getreverse(string& str,int i){ 
-    int n=str.length();
-    //base case
-    if(i>(n-i-1)){
-        return;
+string reverse(string &s,int i){
+    if(i>s.length()/2){
+        return s; 
     }
-    
-    swap(str[i],str[n-i-1]);
+    swap(s[i],s[s.length()-i-1]);
     i++;
-    getreverse(str,i);
-   
-    
+    return reverse(s,i);
 }
 int main(){
 string s="abcde";
-int i=0;
-getreverse(s,i);
-cout<<s<<endl;
+cout<<reverse(s,0);
 cout<<endl;
 return 0;
 }

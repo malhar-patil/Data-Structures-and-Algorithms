@@ -1,18 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
-void counting(int n){
-    if(n==0)
-    return;
+void count(int n){
+    //base case
+    if(n==0){
+        return;
+    }
 
-    counting(n-1);
+    //recursive relation
+    count(n-1);
 
-    cout<<n<<endl;
+    cout<<n<<" ";
 }
 int main(){
 int n;
 cin>>n;
-
-counting(n);
+count(n);
 cout<<endl;
 return 0;
 }

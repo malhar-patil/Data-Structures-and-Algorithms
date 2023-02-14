@@ -5,29 +5,23 @@ void print(int arr[],int n){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
+    return;
 }
 bool linearSearch(int arr[],int n,int key){
     print(arr,n);
+
     //base case
     if(n==0){
         return false;
     }
-
     if(arr[0]==key){
         return true;
     }
-    linearSearch(arr+1,n-1,key);
+    return linearSearch(arr+1,n-1,key);
 }
 int main(){
-int arr[5]={2,5,10,8,16};
-int key=10;
-int ans= linearSearch(arr,5,key);
-if(ans==1){
-    cout<<"Element is present"<<endl;
-}
-else{
-    cout<<"Element is not present"<<endl;
-}
+int arr[6]={1,2,4,5,9,10};
+cout<<linearSearch(arr,6,4 );
 cout<<endl;
 return 0;
 }

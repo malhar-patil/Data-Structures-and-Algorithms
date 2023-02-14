@@ -4,18 +4,20 @@ int main(){
 int n;
 cin>>n;
 int i=2;
-int isPrime=true;
+bool check=true;
 while(i<n){
     if(n%i==0){
-        cout<<"Not a Prime Number"<<endl;
-        isPrime=false;
+        check=false;
         break;
     }
     i++;
 }
-if(isPrime){
+if(check){
     cout<<"Prime Number"<<endl;
 }
-
+else{
+    cout<<"Non-Prime Number"<<endl;
+}
+cout<<endl;
 return 0;
 }
