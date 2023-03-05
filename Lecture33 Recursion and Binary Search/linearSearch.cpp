@@ -9,7 +9,6 @@ void print(int arr[],int n){
 }
 bool linearSearch(int arr[],int n,int key){
     print(arr,n);
-
     //base case
     if(n==0){
         return false;
